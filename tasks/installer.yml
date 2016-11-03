@@ -7,3 +7,5 @@
 
 - name: Pip | Run get-pip.py to intall Pip
   command: python /tmp/get-pip.py
+  register: pip_command
+  changed_when: "'Requirement already up-to-date: pip' not in pip_command.stdout"
